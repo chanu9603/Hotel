@@ -7,15 +7,26 @@
 
 import Foundation
 
-var myNumber = readLine()!
-var myNumberInt = Int(myNumber)!
+print("1 : 계좌 충전\n2 : 호텔방 정보\n3 : 호텔 예약")
+
+//var myNumber = readLine()!
+//var myNumberInt = Int(myNumber)!
 var wallet: Int = 0
 
-if myNumberInt == 1 {
+func addMoney(_ ginie: Int) -> Any{
     wallet += Int.random(in: 1...50)*10000
+    return wallet
 }
-print("현재 잔액은\(wallet)원 입니다")
 
-if myNumberInt == 2{
-    print("1번방 저렴함\n2번방 조금 비쌈\n3번방 이방 비싼뎅ㅋㅋ")
+while let input = readLine(), let myNumberInt = Int(input){
+    if myNumberInt == 0 {
+        break
+    }
+    if myNumberInt == 1 {
+        var result = addMoney(myNumberInt)
+        print("현재 잔액은\(wallet)원 입니다")
+    }
+    if myNumberInt == 2 {
+        print("1번방 1박 10000원, 2번방 1박 20000원, 3번방 1박 30000원, 4번방 1박 40000원, 5번방 1박 50000원")
+    }
 }
